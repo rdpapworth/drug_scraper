@@ -31,7 +31,7 @@ import requests
 from lxml import html
 
 res = requests.get('https://bnf.nice.org.uk/drug/')
-tree = html.fromstring(req.content)
-urls = t.xpath('//div[contains(@class, "span11")]/*/li/a/@href')
+tree = html.fromstring(res.content)
+urls = tree.xpath('//div[contains(@class, "span11")]/*//@href')
 ```
 
